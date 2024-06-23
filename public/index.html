@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CASHFLOW - Manage Your Finances</title>
+</head>
+<body>
+    <header>
+        <h1>CASHFLOW</h1>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Add Transaction</h2>
+            <form action="/add" method="POST" class="transaction-form">
+                <div class="form-group">
+                    <label for="category_select">Category:</label>
+                    <select id="category_select" name="category_select" class="form-control">
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount_input">Amount:</label>
+                    <input type="number" id="amount_input" name="amount_input" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="info">Info:</label>
+                    <input type="text" id="info" name="info" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="date_input">Date:</label>
+                    <input type="date" id="date_input" name="date_input" class="form-control" required>
+                </div>
+                <button type="submit" id="add_btn" class="btn btn-primary">Add</button>
+            </form>
+        </section>
+
+        <section class="transactions-list">
+            <h2>Transactions</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Info</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-table-body">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-right"><strong>Total:</strong></td>
+                        <td id="total-amount">$0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CASHFLOW. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
